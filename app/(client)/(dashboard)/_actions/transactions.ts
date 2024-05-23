@@ -1,10 +1,7 @@
 'use server';
 
 import prisma from '@/lib/prisma';
-import {
-  CreateTransactionSchema,
-  CreateTransactionSchemaType,
-} from '@/schema/createTransactionSchema';
+import { CreateTransactionSchema, CreateTransactionSchemaType } from '@/schema/transactions';
 import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 

@@ -25,10 +25,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { DateToUTCDate } from '@/lib/helpers';
 import { TransactionType } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import {
-  CreateTransactionSchema,
-  CreateTransactionSchemaType,
-} from '@/schema/createTransactionSchema';
+import { CreateTransactionSchema, CreateTransactionSchemaType } from '@/schema/transactions';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { format } from 'date-fns';
