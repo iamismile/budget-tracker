@@ -77,7 +77,11 @@ function CreateTransactionDialog({ trigger, type }: { trigger: ReactNode; type: 
       });
       setOpen((prev) => !prev);
     },
-    onError: () => {},
+    onError: () => {
+      toast.error('Something went wrong', {
+        id: 'create-transaction',
+      });
+    },
   });
 
   const onSubmit = useCallback(
