@@ -1,3 +1,5 @@
+'use client';
+
 import { GetBalanceStatsResponseType } from '@/app/api/stats/balance/route';
 import SkeletonWrapper from '@/components/SkeletonWrapper';
 import { Card } from '@/components/ui/card';
@@ -18,9 +20,9 @@ function StatsCards({
   to: Date;
 }) {
   const statsQuery = useQuery<GetBalanceStatsResponseType>({
-    queryKey: ['overview', 'stats', from, to],
+    queryKey: ['overview', 'stats', 'balance', from, to],
     queryFn: () =>
-      fetch(`/api/stats/balance/?from=${DateToUTCDate(from)}&to=${DateToUTCDate(to)}`).then((res) =>
+      fetch(`/api/stats/balance?from=${DateToUTCDate(from)}&to=${DateToUTCDate(to)}`).then((res) =>
         res.json()
       ),
   });
@@ -51,7 +53,7 @@ function StatsCards({
           value={expense}
           title="Expense"
           icon={
-            <TrendingDown className="h-12 w-12 items-center rounded-lg p-2 text-rose-500 bg-rose-400/10" />
+            <TrendingDown className="h-12 w-12 items-center rounded-lg p-2 text-red-500 bg-rose-400/10" />
           }
         />
       </SkeletonWrapper>
