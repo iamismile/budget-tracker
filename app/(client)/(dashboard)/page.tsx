@@ -3,6 +3,7 @@ import prisma from '@/lib/prisma';
 import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import CreateTransactionDialog from './_components/CreateTransactionDialog';
+import History from './_components/History';
 import Overview from './_components/Overview';
 
 async function DashboardPage() {
@@ -55,6 +56,8 @@ async function DashboardPage() {
       </div>
 
       <Overview userSettings={userSettings} />
+
+      <History userSettings={userSettings} />
     </div>
   );
 }
