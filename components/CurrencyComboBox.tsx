@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { UpdateUserCurrency } from '@/app/(client)/wizard/_actions/userSettings';
+import { UpdateUserCurrency } from '@/app/(web)/wizard/_actions/userSettings';
 import { Button } from '@/components/ui/button';
 import {
   Command,
